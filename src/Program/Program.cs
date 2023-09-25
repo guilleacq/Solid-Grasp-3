@@ -27,7 +27,8 @@ namespace Full_GRASP_And_SOLID
             recipe.AddStep(new Step(GetProduct("Café"), 100, GetEquipment("Cafetera"), 120));
             recipe.AddStep(new Step(GetProduct("Leche"), 200, GetEquipment("Hervidor"), 60));
 
-            IRecipePrinter printer = new ConsoleRecipePrinter();
+            IRecipePrinter printer = new ConsoleRecipePrinter(); // Para esto uso LSP porque puedo tranquilamente reemplazar una pieza 
+                                                                // por otra y va a seguir funcionando de manera adecuada
             printer.PrintRecipe(recipe);
 
             printer = new FileRecipePrinter();
